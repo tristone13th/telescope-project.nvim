@@ -59,10 +59,7 @@ M.try_and_find_git_path = function()
   local git_root = tostring(vim.fn.systemlist(git_cmd)[1]):gsub(".*","")
   local git_root_fatal = _utils.string_starts_with(git_root, 'fatal')
 
-  if not git_root or git_root_fatal then
-    return vim.loop.cwd()
-  end
-  return git_root
+  return vim.loop.cwd()
 end
 
 return M
